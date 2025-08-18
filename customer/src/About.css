@@ -1,0 +1,59 @@
+.about-container {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.our-story,
+.our-mission {
+  margin: 80px 0;
+  text-align: center;
+}
+
+.our-story h2,
+.our-mission h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.our-story p,
+.our-mission p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.Quote,
+.Quote p{
+font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.team-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.team-images img {
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
+}
