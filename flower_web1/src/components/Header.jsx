@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -22,24 +23,38 @@ function Header() {
       {/* Navigation */}
       <nav className="navbar">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li 
-            className="dropdown" 
-            onMouseEnter={() => setDropdownOpen(true)} 
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li
+            className="dropdown"
+            onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <a href="#">Categories ▾</a>
+            <span>Categories ▾</span>
             {dropdownOpen && (
               <ul className="dropdown-menu">
-                <li><a href="/birthday">Birthday</a></li>
-                <li><a href="/graduation">Graduation</a></li>
-                <li><a href="/valentine">Valentine</a></li>
+                <li>
+                  <Link to="/birthday">Birthday</Link>
+                </li>
+                <li>
+                  <Link to="/graduation">Graduation</Link>
+                </li>
+                <li>
+                  <Link to="/valentine">Valentine</Link>
+                </li>
               </ul>
             )}
           </li>
-          <li><a href="#">Daily Deals</a></li>
-          <li><a href="#">Customize Orders</a></li>
-          <li><a href="#">Happy Customers</a></li>
+          <li>
+            <a href="#">Daily Deals</a>
+          </li>
+          <li>
+            <a href="#">Customize Orders</a>
+          </li>
+          <li>
+            <a href="#">Happy Customers</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -47,3 +62,4 @@ function Header() {
 }
 
 export default Header;
+
