@@ -1,30 +1,33 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
-const connectDB = require('./config/db');
-
-
+require('dotenv').config(); // Load environment variables
+const connectDB = require('./config/db'); // MongoDB connection
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Routes
 const flowerRoutes = require('./routes/flowerRoutes');
-app.use('/api/flowers', flowerRoutes);
 const customOrderRoutes = require('./routes/CustomOrderRoutes');
+const feedbackRoutes = require('./routes/FeedbackRoutes');
+
+app.use('/api/flowers', flowerRoutes);
 app.use('/api/custom-orders', customOrderRoutes);
-const FeedbackRoutes = require('./routes/FeedbackRoutes');
-app.use('/api/feedback', FeedbackRoutes);
+app.use('/api/feedback', feedbackRoutes);
 
-
-
-// Connect to MongoDB
-connectDB();
-
-
-// health check route
+// Health check route
 app.get('/health', (req, res) => {
   res.json({ ok: true });
 });
 
+// Connect to MongoDB
+connectDB(); // uses process.env.MONGO_URI in db.js
+
+// Set server port
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
