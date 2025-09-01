@@ -7,6 +7,7 @@ import Rays_Of_Purple from "../assets/images/Rays_Of_Purple.jpg";
 import Lavish_Love from "../assets/images/Lavish_Love.jpg";
 import Sunshine_Mix from "../assets/images/Sunshine_Mix.jpg";
 import Vibrant_Sunset from "../assets/images/Vibrant_Sunset.jpg";
+import "../App.css"; // make sure your global styles are imported
 
 const Home = () => {
   const flowers = [
@@ -21,17 +22,23 @@ const Home = () => {
   ];
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "10px" }}>Welcome to Flower Bouquet Website</h1>
-      <p style={{ textAlign: "center", marginBottom: "30px" }}>
-        Explore our beautiful bouquets and daily deals!
-      </p>
+    <div style={{ padding: "40px", fontFamily: "'Poppins', sans-serif", backgroundColor: "#F5F5F5" }}>
+      {/* Hero Section */}
+      <div style={{ textAlign: "center", marginBottom: "40px" }}>
+        <h1 style={{ fontSize: "3rem", color: "#7D4AEA", marginBottom: "10px" }}>
+          Welcome to Nonimi Flora
+        </h1>
+        <p style={{ fontSize: "1.2rem", color: "#555" }}>
+          Every bouquet is crafted with care, creativity, and a love for beautiful moments. Whether it's a celebration, a surprise, or just because our blooms are designed to make it unforgettable.
+        </p>
+      </div>
 
+      {/* Flower Grid */}
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "20px",
+          gap: "30px",
           justifyItems: "center",
         }}
       >
@@ -39,22 +46,22 @@ const Home = () => {
           <div
             key={flower.id}
             style={{
-              border: "1px solid #ccc",
+              backgroundColor: "#FFFFFF",
               borderRadius: "12px",
               overflow: "hidden",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-              transition: "transform 0.2s, box-shadow 0.2s",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
+              transition: "transform 0.3s, box-shadow 0.3s",
+              cursor: "pointer",
               width: "220px",
               textAlign: "center",
-              cursor: "pointer",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-              e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.2)";
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)";
             }}
           >
             <img
@@ -62,9 +69,9 @@ const Home = () => {
               alt={flower.name}
               style={{ width: "100%", height: "200px", objectFit: "cover" }}
             />
-            <h3 style={{ margin: "10px 0" }}>{flower.name}</h3>
-            <p style={{ fontWeight: "bold", color: "#555", marginBottom: "10px" }}>
-              Price: Rs. {flower.price}
+            <h3 style={{ margin: "15px 0 5px", color: "#7D4AEA" }}>{flower.name}</h3>
+            <p style={{ fontWeight: "bold", color: "#FF6B6B", marginBottom: "15px" }}>
+              Rs. {flower.price}
             </p>
           </div>
         ))}

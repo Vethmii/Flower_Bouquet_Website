@@ -1,0 +1,57 @@
+.footer {
+  background-color: #E7CEF6; /* lighter purple from Figma */
+  padding: 40px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff; /* white text for contrast */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  color: #000000;
+}
+
+.footer-section p, 
+.footer-section li {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: #000000;
+}
+
+.footer-link:hover {
+  color: #FFD6F0;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #7D4AEA;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #FF6B6B;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
