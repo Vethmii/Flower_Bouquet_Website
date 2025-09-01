@@ -10,6 +10,11 @@ app.use(cors());
 app.use(express.json());
 const flowerRoutes = require('./routes/flowerRoutes');
 app.use('/api/flowers', flowerRoutes);
+const customOrderRoutes = require('./routes/CustomOrderRoutes');
+app.use('/api/custom-orders', customOrderRoutes);
+const FeedbackRoutes = require('./routes/FeedbackRoutes');
+app.use('/api/feedback', FeedbackRoutes);
+
 
 
 // Connect to MongoDB

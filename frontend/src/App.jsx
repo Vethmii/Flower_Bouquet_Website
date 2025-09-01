@@ -8,6 +8,9 @@ import CustomizeOrders from "./pages/CustomizeOrders";
 import Feedback from "./pages/Feedback";
 import AboutUs from "./pages/AboutUs";
 import FAQ from "./pages/FAQ";
+import Birthday from "./pages/Birthday";
+import Graduation from "./pages/Graduation";
+import Valentine from "./pages/Valentine";
 import "./App.css";
 
 function App() {
@@ -22,6 +25,9 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/category/birthday" element={<Birthday />} />
+          <Route path="/category/graduation" element={<Graduation />} />
+          <Route path="/category/valentine" element={<Valentine />} />
         </Routes>
       </main>
       <Footer />
