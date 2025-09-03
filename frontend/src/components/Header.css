@@ -69,7 +69,8 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  color:#000000;
 }
 
 .search-bar {

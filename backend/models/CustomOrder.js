@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 
 const customOrderSchema = new mongoose.Schema({
-  name: { type: String, required: true }, // Customer name
-  email: { type: String, required: true },
-  phone: { type: String, required: true },
-  occasion: { type: String, required: true }, // e.g., Birthday, Graduation
-  description: { type: String, required: true }, // Custom request
-  createdAt: { type: Date, default: Date.now }
-});
+  customerName: { type: String, required: true },
+  contactNo: { type: String, required: true },
+  occasionType: { type: String, required: true },
+  preferredFlowers: { type: String },
+  wrappingStyle: { type: String },
+  deliveryDate: { type: Date },
+  fileURL: { type: String }, 
+}, { timestamps: true });
 
 module.exports = mongoose.model('CustomOrder', customOrderSchema);
+
+
+

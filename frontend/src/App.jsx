@@ -11,6 +11,11 @@ import FAQ from "./pages/FAQ";
 import Birthday from "./pages/Birthday";
 import Graduation from "./pages/Graduation";
 import Valentine from "./pages/Valentine";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminPanel from "./pages/admin/AdminPanel";
+import AdminCustomOrders from "./Pages/Admin/AdminCustomOrders";
+
+
 import "./App.css";
 
 function App() {
@@ -28,6 +33,9 @@ function App() {
           <Route path="/category/birthday" element={<Birthday />} />
           <Route path="/category/graduation" element={<Graduation />} />
           <Route path="/category/valentine" element={<Valentine />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/admin/custom-orders" element={<AdminCustomOrders />} />
         </Routes>
       </main>
       <Footer />
