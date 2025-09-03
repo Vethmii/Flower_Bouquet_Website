@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./CustomizeOrders.css"; // import the new css
 
 const CustomizeOrders = () => {
   const [customerName, setCustomerName] = useState("");
@@ -27,9 +28,13 @@ const CustomizeOrders = () => {
       });
 
       alert("Your custom order has been submitted!");
-      setCustomerName(""); setContactNo(""); setOccasionType(""); setPreferredFlowers("");
-      setWrappingStyle(""); setDeliveryDate(""); setFile(null);
-
+      setCustomerName("");
+      setContactNo("");
+      setOccasionType("");
+      setPreferredFlowers("");
+      setWrappingStyle("");
+      setDeliveryDate("");
+      setFile(null);
     } catch (err) {
       console.error(err.response?.data || err.message);
       alert("Error submitting order. Check console.");
@@ -37,20 +42,66 @@ const CustomizeOrders = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Customize Your Bouquet</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px", width: "300px" }}>
-        <input type="text" placeholder="Customer Name" value={customerName} onChange={e => setCustomerName(e.target.value)} required />
-        <input type="text" placeholder="Contact No" value={contactNo} onChange={e => setContactNo(e.target.value)} required />
-        <input type="text" placeholder="Occasion Type" value={occasionType} onChange={e => setOccasionType(e.target.value)} required />
-        <input type="text" placeholder="Preferred Flowers / Colors" value={preferredFlowers} onChange={e => setPreferredFlowers(e.target.value)} />
-        <input type="text" placeholder="Wrapping Style" value={wrappingStyle} onChange={e => setWrappingStyle(e.target.value)} />
-        <input type="date" value={deliveryDate} onChange={e => setDeliveryDate(e.target.value)} />
-        <input type="file" onChange={e => setFile(e.target.files[0])} />
-        <button type="submit" style={{ padding: "10px", backgroundColor: "#800080", color: "#fff", border: "none", borderRadius: "6px", cursor: "pointer" }}>
-          Submit
-        </button>
-      </form>
+    <div className="customize-orders">
+      <h1 className="page-title">Customize Your Bouquet</h1>
+      <div className="customize-content">
+        {/* Left Section: Gallery / Info (Optional future use) */}
+        <div className="customize-gallery">
+          <h2>Ideas & Inspirations</h2>
+          <img src="https://via.placeholder.com/350x200" alt="Sample Bouquet" />
+          <img src="https://via.placeholder.com/350x200" alt="Sample Bouquet" />
+        </div>
+
+        {/* Right Section: Form */}
+        <div className="customize-form">
+          <h2>Fill Your Preferences</h2>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Customer Name"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Contact No"
+              value={contactNo}
+              onChange={(e) => setContactNo(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Occasion Type"
+              value={occasionType}
+              onChange={(e) => setOccasionType(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="Preferred Flowers / Colors"
+              value={preferredFlowers}
+              onChange={(e) => setPreferredFlowers(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Wrapping Style"
+              value={wrappingStyle}
+              onChange={(e) => setWrappingStyle(e.target.value)}
+            />
+            <input
+              type="date"
+              value={deliveryDate}
+              onChange={(e) => setDeliveryDate(e.target.value)}
+            />
+            <input
+              type="file"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+            <button type="submit">Submit Order</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
