@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Nonimi Flora</title>
+  <link rel="stylesheet" href="assets/css/about.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container">
+      <span class="contact">📞 +94 77 123 4567</span>
+      <a class="cart" href="#">🛒 Cart</a>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">Nonimi <strong>Flora</strong></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Categories</a>
+        <a href="#">Daily Deals</a>
+        <a href="#">Customize Orders</a>
+        <a href="#">Happy Customers</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <main class="container">
+    <section class="about-hero">
+      <h1>About Nonimi Flora</h1>
+      <p class="lede">
+        Rooted in creativity and a love for nature, Nonimi Flora is dedicated to crafting beautiful,
+        meaningful flower bouquets for every occasion. Each arrangement is made with care, passion, and a
+        personal touch that sets us apart.
+      </p>
+
+      <h2>Our Story</h2>
+      <p>
+        Started as a small, heartfelt venture, Nonimi Flora has blossomed into a passion for designing
+        memorable bouquets. Each arrangement is thoughtfully created to reflect our customer’s story and the joy
+        it can bring to everyday moments. While we currently serve our local area, we have dreams of blooming
+        across Colombo in the future.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© <span id="yr"></span> Nonimi Flora. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
