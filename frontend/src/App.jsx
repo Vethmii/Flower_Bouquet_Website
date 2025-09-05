@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import DailyDeals from "./pages/DailyDeals";
-import CustomizeOrders from "./pages/CustomizeOrders";
+import CustomizeOrders from "./Pages/CustomizeOrders";
 import Feedback from "./pages/Feedback";
 import AboutUs from "./pages/AboutUs";
 import FAQ from "./pages/FAQ";
