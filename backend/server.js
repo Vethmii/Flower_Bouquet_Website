@@ -1,31 +1,32 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const connectDB = require('./config/db');
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const connectDB = require("./config/db");
 
 // Import routes
-const flowerRoutes = require('./routes/flowerRoutes');
-const customOrderRoutes = require('./routes/CustomOrderRoutes');
-const feedbackRoutes = require('./routes/FeedbackRoutes');
-const adminRoutes = require('./routes/AdminRoutes');
+const flowerRoutes = require("./routes/flowerRoutes");
+const customOrderRoutes = require("./routes/CustomOrderRoutes");
+const feedbackRoutes = require("./routes/FeedbackRoutes");
+const adminRoutes = require("./routes/AdminRoutes");
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // support form-data
 
-// Serve uploaded files (so fileURL works)
-app.use('/uploads', express.static('uploads'));
+// Serve uploaded files
+app.use("/uploads", express.static("uploads"));
 
 // Routes
-app.use('/api/flowers', flowerRoutes);
-app.use('/api/custom-orders', customOrderRoutes);
-app.use('/api/feedback', feedbackRoutes);
-app.use('/api/admin', adminRoutes);
+app.use("/api/flowers", flowerRoutes);
+app.use("/api/custom-orders", customOrderRoutes);
+app.use("/api/feedback", feedbackRoutes); // Feedback API
+app.use("/api/admin", adminRoutes);
 
 // Health check route
-app.get('/health', (req, res) => {
+app.get("/health", (req, res) => {
   res.json({ ok: true });
 });
 
@@ -36,7 +37,8 @@ connectDB()
     app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
   })
   .catch((err) => {
-    console.error('❌ Failed to connect to MongoDB:', err.message);
+    console.error("❌ Failed to connect to MongoDB:", err.message);
     process.exit(1);
   });
+
 

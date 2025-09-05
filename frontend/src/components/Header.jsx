@@ -1,14 +1,16 @@
-import React from "react";
+import React from "react";  
 import { Link } from "react-router-dom";
 import "./Header.css"; 
 
 const Header = () => {
   return (
     <header className="header">
+      {/* Logo */}
       <div className="logo">
         <Link to="/">Nonimi Flora</Link>
       </div>
 
+      {/* Navigation */}
       <nav className="nav">
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
@@ -28,13 +30,25 @@ const Header = () => {
         </ul>
       </nav>
 
+      {/* Right Section */}
       <div className="header-right">
+        {/* Search bar on top */}
         <input type="text" placeholder="Search..." className="search-bar" />
-        <div className="contact">📞 +94 77 123 4567</div>
-        <div className="cart">🛒</div>
+        
+        {/* Hotline and Cart in a row */}
+        <div className="contact-cart">
+          <div className="contact">
+            <div className="hotline-label">Hotline</div>
+            <div className="hotline-number">+94 77 123 4567</div>
+          </div>
+          <div className="cart">🛒</div>
+        </div>
       </div>
     </header>
   );
 };
 
 export default Header;
+
+
+

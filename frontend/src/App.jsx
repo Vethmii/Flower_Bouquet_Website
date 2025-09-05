@@ -14,9 +14,11 @@ import Valentine from "./pages/Valentine";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminPanel from "./pages/admin/AdminPanel";
 import AdminCustomOrders from "./Pages/Admin/AdminCustomOrders";
+import AdminHappyCustomers from "./Pages/Admin/AdminHappyCustomers";
 
 
 import "./App.css";
+
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/admin/custom-orders" element={<AdminCustomOrders />} />
+          <Route path="/admin/happy-customers" element={<AdminHappyCustomers />} />
         </Routes>
       </main>
       <Footer />
