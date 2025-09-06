@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import DailyDeals from "./pages/DailyDeals";
+import DailyDeals from "./Pages/DailyDeals";
 import CustomizeOrders from "./Pages/CustomizeOrders";
 import Feedback from "./pages/Feedback";
 import AboutUs from "./pages/AboutUs";
@@ -15,6 +15,8 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminPanel from "./pages/admin/AdminPanel";
 import AdminCustomOrders from "./Pages/Admin/AdminCustomOrders";
 import AdminHappyCustomers from "./Pages/Admin/AdminHappyCustomers";
+import AdminDailyDeals from "./Pages/Admin/AdminDailyDeals";
+
 
 
 import "./App.css";
@@ -39,6 +41,7 @@ function App() {
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/admin/custom-orders" element={<AdminCustomOrders />} />
           <Route path="/admin/happy-customers" element={<AdminHappyCustomers />} />
+          <Route path="/admin/daily-deals" element={<AdminDailyDeals />} />
         </Routes>
       </main>
       <Footer />

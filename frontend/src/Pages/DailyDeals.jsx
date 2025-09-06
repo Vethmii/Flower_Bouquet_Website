@@ -1,66 +1,62 @@
-import React, { useState, useEffect } from "react";
+// DailyDeals.jsx
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./DailyDeals.css";
 
-const DailyDeals = () => {
-  const [deals, setDeals] = useState([]);
+const API_BASE = "http://localhost:5000/api/flowers";
+
+export default function DailyDeals() {
+  const [dealsFlowers, setDealsFlowers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetch = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(API_BASE);
+      const withDeals = res.data
+        .map(f => ({ ...f, dailyDeals: f.dailyDeals || [] }))
+        .filter(f => f.dailyDeals.length > 0)
+        .map(f => {
+          const latest = f.dailyDeals.reduce((a, b) =>
+            new Date(a.createdAt) > new Date(b.createdAt) ? a : b
+          );
+          return { ...f, activeDeal: latest };
+        });
+
+      setDealsFlowers(withDeals);
+    } catch (err) {
+      console.error("DailyDeals fetch error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchDeals = async () => {
-      try {
-        const res = await axios.get("http://localhost:5000/api/deals");
-        setDeals(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchDeals();
+    fetch();
   }, []);
 
-  return (
-    <div style={{ padding: "40px", fontFamily: "'Poppins', sans-serif", backgroundColor: "#F5F5F5" }}>
-      <div style={{ textAlign: "center", marginBottom: "40px" }}>
-        <h1 style={{ fontSize: "2.5rem", color: "#FF6B6B" }}>🌸 Daily Deals 🌸</h1>
-        <p style={{ fontSize: "1.1rem", color: "#555" }}>
-          Grab our best-selling bouquets at special prices today only!
-        </p>
-      </div>
+  if (loading) return <p style={{ padding: 20 }}>Loading daily deals...</p>;
+  if (dealsFlowers.length === 0) return <p style={{ padding: 20 }}>No daily deals right now.</p>;
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "30px",
-          justifyItems: "center",
-        }}
-      >
-        {deals.length === 0 ? (
-          <p>No deals available right now.</p>
-        ) : (
-          deals.map((d) => (
-            <div
-              key={d._id}
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderRadius: "12px",
-                overflow: "hidden",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
-                transition: "transform 0.3s, boxShadow 0.3s",
-                cursor: "pointer",
-                width: "220px",
-                textAlign: "center",
-              }}
-            >
-              <img src={d.imageURL} alt={d.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-              <h3 style={{ margin: "15px 0 5px", color: "#FF6B6B" }}>{d.name}</h3>
-              <p style={{ fontWeight: "bold", color: "#7D4AEA" }}>Rs. {d.discountPrice}</p>
-              <p style={{ textDecoration: "line-through", color: "#777" }}>Rs. {d.originalPrice}</p>
+  return (
+    <div className="daily-deals-page">
+      <h1>Daily Deals</h1>
+      <div className="deals-grid">
+        {dealsFlowers.map(f => (
+          <div key={f._id} className="deal-card">
+            <div className="user-deal-square left">
+              <span className="user-deal-text">{f.activeDeal.percent}% OFF</span>
             </div>
-          ))
-        )}
+            <img src={f.imageURL} alt={f.name} />
+            <div className="deal-card-body">
+              <h3>{f.name}</h3>
+              <p className="price">Rs. {f.price}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
-};
+}
 
-export default DailyDeals;
+

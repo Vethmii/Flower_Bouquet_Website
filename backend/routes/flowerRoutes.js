@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// ---------------- Routes ----------------
+// ---------------- Flower Routes ----------------
 
 // GET /api/flowers - fetch all flowers
 router.get('/', async (req, res) => {
@@ -34,7 +34,9 @@ router.post('/', upload.single('image'), async (req, res) => {
     const { name, price, category, stock } = req.body;
 
     if (!name || !price || !category || !req.file) {
-      return res.status(400).json({ message: 'Please provide all required fields and upload an image' });
+      return res
+        .status(400)
+        .json({ message: 'Please provide all required fields and upload an image' });
     }
 
     const flower = new Flower({
@@ -81,6 +83,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const deleted = await Flower.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ message: 'Flower not found' });
+
     console.log('Flower deleted:', req.params.id);
     res.json({ message: 'Flower deleted' });
   } catch (err) {
@@ -89,4 +92,50 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// ---------------- Daily Deals Routes ----------------
+
+// POST /api/flowers/:id/deals - add a daily deal
+router.post('/:id/deals', async (req, res) => {
+  try {
+    const { percent, corner } = req.body;
+    if (!percent) {
+      return res.status(400).json({ message: 'Percent is required for a daily deal' });
+    }
+
+    const flower = await Flower.findById(req.params.id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    const newDeal = { percent, corner: corner || 'right' };
+    flower.dailyDeals.push(newDeal);
+
+    const updatedFlower = await flower.save();
+    console.log('Daily deal added:', newDeal);
+    res.status(201).json(updatedFlower);
+  } catch (err) {
+    console.error('Error adding daily deal:', err);
+    res.status(500).json({ message: 'Server error adding daily deal' });
+  }
+});
+
+// DELETE /api/flowers/:id/deals/:dealId - remove a daily deal
+router.delete('/:id/deals/:dealId', async (req, res) => {
+  try {
+    const flower = await Flower.findById(req.params.id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    flower.dailyDeals = flower.dailyDeals.filter(
+      (deal) => deal._id.toString() !== req.params.dealId
+    );
+
+    const updatedFlower = await flower.save();
+    console.log('Daily deal removed:', req.params.dealId);
+    res.json(updatedFlower);
+  } catch (err) {
+    console.error('Error removing daily deal:', err);
+    res.status(500).json({ message: 'Server error removing daily deal' });
+  }
+});
+
 module.exports = router;
+
+
