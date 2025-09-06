@@ -2,7 +2,9 @@ import React from "react";
 
 const AboutUs = () => {
   return (
+    
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+      
       <h1>About Nonimi Flora</h1>
       <p>
         Rooted in creativity and a love for nature, Nonimi Flora is dedicated to crafting elegant, meaningful flower bouquets for every occasion. Each arrangement is made with care, passion, and a personal touch that sets us apart.

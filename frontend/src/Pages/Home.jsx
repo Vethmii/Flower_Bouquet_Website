@@ -3,8 +3,8 @@ import axios from "axios";
 
 const Home = () => {
   const [flowers, setFlowers] = useState([]);
-  const [loading, setLoading] = useState(true); // Track loading state
-  const [error, setError] = useState(null);     // Track fetch errors
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchFlowers = async () => {
@@ -24,22 +24,50 @@ const Home = () => {
     fetchFlowers();
   }, []);
 
-  return (
-    <div style={{ padding: "40px", fontFamily: "'Poppins', sans-serif", backgroundColor: "#F5F5F5" }}>
-      <div style={{ textAlign: "center", marginBottom: "40px" }}>
-        <h1 style={{ fontSize: "3rem", color: "#7D4AEA", marginBottom: "10px" }}>Welcome to Nonimi Flora</h1>
-        <p style={{ fontSize: "1.2rem", color: "#555" }}>
-          Every bouquet is crafted with care, creativity, and a love for beautiful moments.
-        </p>
+    return (
+    <div
+      style={{
+        fontFamily: "'Poppins', sans-serif",
+        backgroundColor: "#F5F5F5",
+      }}
+    >
+      {/* Banner Section */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: "#eacef0",
+          padding: "40px",
+          borderRadius: "16px",
+          margin: "20px auto",
+          width: "90%",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        }}
+      >
+        <div style={{ maxWidth: "55%" }}>
+          <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
+            Where flowers speak for you....
+          </h1>
+          <p style={{ fontSize: "1.1rem", color: "#555" }}>
+            every bouquet is crafted with care, creativity, and a love for beautiful moments. Whether it's a celebration, a surprise, or just because — our blooms are designed to make it unforgettable.
+          </p>
+        </div>
+        <img
+          src="https://assets.eflorist.com/site/EF-2287/assets/products/PHR_/sku10240643.jpg"
+          alt="banner"
+          style={{ width: "35%", borderRadius: "12px", objectFit: "cover" }}
+        />
       </div>
+
 
       {loading ? (
         <p style={{ textAlign: "center", color: "#555" }}>Loading bouquets...</p>
       ) : error ? (
         <div style={{ textAlign: "center", color: "red", marginBottom: "20px" }}>
           <p>{error}</p>
-          <button 
-            onClick={() => window.location.reload()} 
+          <button
+            onClick={() => window.location.reload()}
             style={{
               padding: "10px 20px",
               backgroundColor: "#7D4AEA",
