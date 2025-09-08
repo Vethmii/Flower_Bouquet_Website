@@ -21,7 +21,7 @@ const Graduation = () => {
     <div
       style={{
         fontFamily: "'Poppins', sans-serif",
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#F5F5F5",padding: "40px"
       }}
     >
       {/* Banner Section */}
@@ -42,7 +42,7 @@ const Graduation = () => {
           <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
             Celebrate Achievements with Elegant Blooms  🎓 
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#555" }}>
+           <p style={{ fontSize:" 2rem",color: "#555" }}>
             Congratulate the proud graduates with sophisticated bouquets that symbolize success and new beginnings.
           </p>
         </div>

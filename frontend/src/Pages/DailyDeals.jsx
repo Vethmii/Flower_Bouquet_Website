@@ -21,7 +21,7 @@ const DailyDeals = () => {
     <div
       style={{
         fontFamily: "'Poppins', sans-serif",
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#F5F5F5",padding: "40px"
       }}
     >
       {/* Banner Section */}
@@ -42,7 +42,7 @@ const DailyDeals = () => {
           <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
             Fresh Blooms, Fresh Offers Every Day 🌸
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#555" }}>
+          <p style={{ fontSize:" 2rem",color: "#555" }}>
             Discover our daily handpicked deals on stunning bouquets. Limited-time discounts on the freshest flowers, perfect for last-minute gifts or treating yourself to a little floral joy.
           </p>
         </div>
@@ -144,7 +144,7 @@ const DailyDeals = () => {
       </div>
 
       {/* Footer Note */}
-      <div style={{ textAlign: "center", margin: "40px 0", color: "#444" }}>
+      <div style={{ textAlign: "center", margin: "40px 0", color: "#444" ,FontSize :"2rem"}}>
         <h3>Grab Your Favorite Bouquet Before Today’s Deals Wilt Away!</h3>
       </div>
     </div>

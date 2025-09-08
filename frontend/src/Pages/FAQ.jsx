@@ -25,17 +25,30 @@ const FAQ = () => {
   ];
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1>Frequently Asked Questions</h1>
-      <div style={{ marginTop: "20px" }}>
-        {faqs.map((faq, index) => (
-          <div key={index} style={{ marginBottom: "15px", borderBottom: "1px solid #ccc", paddingBottom: "10px" }}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <div style={{
+       maxWidth: "1000px", 
+       margin: "40px auto",backgroundColor: "#fbe4f8",borderRadius: "15px",  boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)", display: "flex", alignItems: "center", gap: "30px" ,
+      padding: "20px",}}>
+      
+      <div style={{ flex: 1, padding: "20px" }}> {/* Takes up available space */}
+        <h1 style={{ color: "#8a2be2", marginBottom: "15px", fontSize: "2.5em" }}>
+          Frequently Asked Questions
+        </h1>
+        <p style={{ color: "#4b0082", fontSize: "1.1em", marginBottom: "30px" }}>
+          Quick answers to your most common questions. If you can't find what you're looking for, feel free to contact us!
+        </p>
+        <div style={{ marginTop: "20px" }}>
+          {faqs.map((faq, index) => (
+            <div key={index} style={{ marginBottom: "15px", paddingBottom: "10px" }}>
+              <h3 style={{ color: "#9932cc", marginBottom: "5px" }}>{faq.question}</h3>
+              <p style={{ color: "#6a5acd" }}>{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      </div>
+      
   );
 };
 

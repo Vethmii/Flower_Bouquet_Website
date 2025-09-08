@@ -21,7 +21,7 @@ const Birthday = () => {
     <div
       style={{
         fontFamily: "'Poppins', sans-serif",
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#F5F5F5",padding: "40px"
       }}
     >
       {/* Banner Section */}
@@ -42,7 +42,7 @@ const Birthday = () => {
           <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
             Bouquets to Brighten Their Special Day  🎉
           </h1>
-          <p style={{ fontSize: "1.1rem", color: "#555" }}>
+           <p style={{ fontSize:" 2rem",color: "#555" }}>
             Make birthdays extra special with our hand-crafted flower arrangements designed to bring smiles and joy.
           </p>
         </div>
