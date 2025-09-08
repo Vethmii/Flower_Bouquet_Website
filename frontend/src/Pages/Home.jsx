@@ -93,6 +93,7 @@ const Home = () => {
             <div key={f._id} style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "12px",
+                padding: "10px 20px",
               overflow: "hidden",
               boxShadow: "0 4px 16px rgba(0,0,0,0.1)",
               transition: "transform 0.3s, box-shadow 0.3s",
@@ -103,7 +104,8 @@ const Home = () => {
               onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-5px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2)"; }}
               onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)"; }}
             >
-              <img src={f.imageURL} alt={f.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+              <img src={f.imageURL} alt={f.name} style={{ width: "100%", height: "280px",
+                 objectFit: "cover" }} />
               <h3 style={{ margin: "15px 0 5px", color: "#7D4AEA" }}>{f.name}</h3>
               <p style={{ fontWeight: "bold", color: "#FF6B6B", marginBottom: "15px" }}>Rs. {f.price}</p>
              {/* Add to Cart Button */}
