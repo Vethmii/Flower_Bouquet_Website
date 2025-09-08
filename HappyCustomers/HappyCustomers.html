@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Customers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#f4a7d7;
+      --purple:#a56cf4;
+      --bg:#f8f6fb;
+      --card:#fff;
+      --text:#141217;
+      --muted:#6b6578;
+      --hero-bg:#eacdf9;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(15,12,20,0.08);
+    }
+    *{box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{margin:0;background:var(--bg);color:var(--text);}
+
+    /* Header */
+    header{background:#111;padding:12px;}
+    header .brand{color:#fff;font-weight:700;font-size:20px;text-decoration:none;}
+    nav{margin-top:8px;}
+    nav a{color:#cfcfe8;text-decoration:none;margin-right:15px;font-size:14px;}
+    nav a.active{color:var(--pink);font-weight:600;}
+
+    /* Hero */
+    .hero{background:var(--hero-bg);padding:30px;text-align:center;}
+    .hero h1{margin:0;font-size:28px;color:#222;}
+    .hero p{color:var(--muted);margin-top:8px;}
+
+    /* Feedback form */
+    .form-box{max-width:600px;margin:20px auto;background:white;padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);}
+    .form-box h2{margin-top:0;}
+    .form-box input,.form-box textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #ddd;border-radius:8px;}
+    .form-box button{background:linear-gradient(90deg,var(--pink),var(--purple));border:none;color:#fff;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer;}
+
+    /* Feedback list */
+    .feedback-list{max-width:600px;margin:20px auto;display:flex;flex-direction:column;gap:12px;}
+    .card{background:var(--card);padding:15px;border-left:5px solid var(--purple);border-radius:10px;box-shadow:var(--shadow);}
+    .card p{margin:0 0 6px;}
+    .card small{color:var(--muted);}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="brand">Nonimi Flora</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Orders</a>
+      <a href="#">Offers</a>
+      <a href="#">About Us</a>
+      <a class="active" href="#">Happy Customers</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Where Flowers Speak For You</h1>
+    <p>Share your happy words with us 💐</p>
+  </section>
+
+  <section class="form-box">
+    <h2>Add Your Feedback</h2>
+    <input id="name" type="text" placeholder="Your name (optional)" />
+    <textarea id="message" placeholder="Type your feedback..." rows="4"></textarea>
+    <button onclick="addFeedback()">Save</button>
+  </section>
+
+  <section class="feedback-list" id="feedbackList">
+    <!-- feedback cards will appear here -->
+  </section>
+
+  <script>
+    const STORAGE_KEY = "happy_customers_v1";
+    let feedbacks = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+
+    function renderFeedbacks() {
+      const list = document.getElementById("feedbackList");
+      list.innerHTML = "";
+      feedbacks.forEach(fb => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <p>"${fb.message}"</p>
+          <small>- ${fb.name || "Anonymous"}, ${new Date(fb.date).toLocaleString()}</small>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    function addFeedback() {
+      const name = document.getElementById("name").value.trim();
+      const message = document.getElementById("message").value.trim();
+      if(!message) {
+        alert("Please enter feedback!");
+        return;
+      }
+      const newFb = { name, message, date: new Date().toISOString() };
+      feedbacks.unshift(newFb);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbacks));
+      document.getElementById("name").value = "";
+      document.getElementById("message").value = "";
+      renderFeedbacks();
+    }
+
+    // Initial render
+    renderFeedbacks();
+  </script>
+</body>
+</html>
