@@ -20,7 +20,7 @@ const FAQ = () => {
     },
     {
       question: "How can I contact customer support?",
-      answer: "You can call us at 📞 123-456-7890 or send us a message via our contact form."
+      answer: "You can call us at 📞 +94 722912965 or send us a message via our contact form."
     }
   ];
 

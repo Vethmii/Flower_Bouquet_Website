@@ -30,7 +30,7 @@ const Header = () => {
 
       <div className="header-right">
         <input type="text" placeholder="Search..." className="search-bar" />
-        <div className="contact">📞 +94 77 123 4567</div>
+        <div className="contact">📞 +94 722912965</div>
         <div className="cart">🛒</div>
       </div>
     </header>
