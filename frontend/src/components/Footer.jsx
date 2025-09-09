@@ -10,7 +10,6 @@ const Footer = () => {
         <div className="footer-section">
           <h3>About Us</h3>
           <p>
-            Nonimi Flora is dedicated to crafting elegant flower bouquets for every occasion. 
             <Link to="/about-us" className="footer-link"> Learn more</Link>
           </p>
         </div>

@@ -27,9 +27,13 @@ const CustomizeOrders = () => {
       });
 
       alert("Your custom order has been submitted!");
-      setCustomerName(""); setContactNo(""); setOccasionType(""); setPreferredFlowers("");
-      setWrappingStyle(""); setDeliveryDate(""); setFile(null);
-
+      setCustomerName("");
+      setContactNo("");
+      setOccasionType("");
+      setPreferredFlowers("");
+      setWrappingStyle("");
+      setDeliveryDate("");
+      setFile(null);
     } catch (err) {
       console.error(err.response?.data || err.message);
       alert("Error submitting order. Check console.");
@@ -37,17 +41,100 @@ const CustomizeOrders = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Customize Your Bouquet</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px", width: "300px" }}>
-        <input type="text" placeholder="Customer Name" value={customerName} onChange={e => setCustomerName(e.target.value)} required />
-        <input type="text" placeholder="Contact No" value={contactNo} onChange={e => setContactNo(e.target.value)} required />
-        <input type="text" placeholder="Occasion Type" value={occasionType} onChange={e => setOccasionType(e.target.value)} required />
-        <input type="text" placeholder="Preferred Flowers / Colors" value={preferredFlowers} onChange={e => setPreferredFlowers(e.target.value)} />
-        <input type="text" placeholder="Wrapping Style" value={wrappingStyle} onChange={e => setWrappingStyle(e.target.value)} />
-        <input type="date" value={deliveryDate} onChange={e => setDeliveryDate(e.target.value)} />
-        <input type="file" onChange={e => setFile(e.target.files[0])} />
-        <button type="submit" style={{ padding: "10px", backgroundColor: "#800080", color: "#fff", border: "none", borderRadius: "6px", cursor: "pointer" }}>
+    <div style={{ padding: "20px" , backgroundColor: "#F5F5F5",padding: "40px"
+
+    }}>
+  
+      {/* Banner Section */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          backgroundColor: "#eacef0",
+          padding: "40px",
+          borderRadius: "16px",
+          margin: "20px auto",
+          width: "90%",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        }}
+      >
+        <div style={{ maxWidth: "55%" }}>
+          <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
+            Customize Your Bouquet
+          </h1>
+           <p style={{ fontSize:" 2rem",color: "#555" }}>
+           Personalize your flower arrangement to match your unique style and occasion. Choose your favorite blooms, colors, and wrapping — we’ll craft it just the way you imagined.
+          </p>
+        </div>
+        <img
+          src="https://www.flowerssameday.co.uk/images/large/LFHTP3.jpg"
+          alt="banner"
+          style={{ width: "35%", borderRadius: "12px", objectFit: "cover" }}
+        />
+      </div>
+      <h2>
+        
+        Customize Your Bouquet</h2>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+          width: "300px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Customer Name"
+          value={customerName}
+          onChange={(e) => setCustomerName(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Contact No"
+          value={contactNo}
+          onChange={(e) => setContactNo(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Occasion Type"
+          value={occasionType}
+          onChange={(e) => setOccasionType(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Preferred Flowers / Colors"
+          value={preferredFlowers}
+          onChange={(e) => setPreferredFlowers(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Wrapping Style"
+          value={wrappingStyle}
+          onChange={(e) => setWrappingStyle(e.target.value)}
+        />
+        <input
+          type="date"
+          value={deliveryDate}
+          onChange={(e) => setDeliveryDate(e.target.value)}
+        />
+        <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+        <button
+          type="submit"
+          style={{
+            padding: "10px",
+            backgroundColor: "#800080",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
           Submit
         </button>
       </form>
