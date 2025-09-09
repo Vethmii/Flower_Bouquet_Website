@@ -1,8 +1,15 @@
+// routes/CustomOrderRoutes.js
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { addCustomOrder, getCustomOrders } = require('../controllers/CustomOrdercontroller');
+
+const {
+  addCustomOrder,
+  getCustomOrders,
+  updateCustomOrder,
+  deleteCustomOrder,
+} = require('../controllers/CustomOrdercontroller');
 
 // Multer setup
 const storage = multer.diskStorage({
@@ -14,10 +21,14 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// POST: add new custom order
+// Routes
 router.post('/', upload.single('file'), addCustomOrder);
-
-// GET: fetch all custom orders
 router.get('/', getCustomOrders);
+router.put('/:id', updateCustomOrder);
+router.delete('/:id', deleteCustomOrder);
 
 module.exports = router;
+
+
+
+

@@ -19,7 +19,6 @@
   margin-top: 40px;
 }
 
-/* Scrollable table wrapper */
 .table-wrapper {
   overflow-x: auto;
 }
@@ -42,6 +41,7 @@
   padding: 12px 15px;
   text-align: center;
   border-bottom: 1px solid #eee;
+  vertical-align: middle;
 }
 
 .orders-table tbody tr:nth-child(even) {
@@ -62,3 +62,38 @@
 .orders-table a:hover {
   color: #8a4ecb;
 }
+
+.completed-row {
+  background: #e6ffe6 !important;
+  text-decoration: line-through;
+  color: #555;
+}
+
+.id-cell {
+  max-width: 160px;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #f2dede;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.12s ease, color 0.12s ease, background 0.12s ease;
+}
+
+.delete-btn:hover:not([disabled]) {
+  color: #c9302c;
+  transform: scale(1.06);
+  background: rgba(217, 83, 79, 0.05);
+}
+
+.delete-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

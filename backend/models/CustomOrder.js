@@ -1,3 +1,4 @@
+// models/CustomOrder.js
 const mongoose = require('mongoose');
 
 const customOrderSchema = new mongoose.Schema({
@@ -7,10 +8,14 @@ const customOrderSchema = new mongoose.Schema({
   preferredFlowers: { type: String },
   wrappingStyle: { type: String },
   deliveryDate: { type: Date },
-  fileURL: { type: String }, 
+  fileURL: { type: String },
 }, { timestamps: true });
 
 module.exports = mongoose.model('CustomOrder', customOrderSchema);
+
+
+
+
 
 
 
