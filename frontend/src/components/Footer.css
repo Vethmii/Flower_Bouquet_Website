@@ -1,0 +1,204 @@
+.footer {
+  background-color: #e8d5f0;
+  padding: 40px 20px 20px;
+  margin-top: auto;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h3 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-link:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.social-icon {
+  text-decoration: none;
+}
+
+.whatsapp-link {
+  text-decoration: none;
+}
+
+.fb-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #1877F2;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.fb-icon:hover {
+  background-color: #166fe5;
+}
+
+/* Contact Section */
+.contact-section {
+  text-align: right;
+}
+
+.contact-section h3 {
+  text-align: right;
+}
+
+/* Contact Info */
+.contact-info {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contact-address {
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.contact-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  width: fit-content;
+  transition: background-color 0.3s ease;
+}
+
+.contact-phone:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-icon {
+  font-size: 16px;
+}
+
+/* Location/Map */
+.location-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-container {
+  margin-top: 5px;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .contact-section {
+    text-align: left;
+  }
+  
+  .contact-section h3 {
+    text-align: left;
+  }
+  
+  .contact-info {
+    align-items: flex-start;
+  }
+  
+  .contact-address {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .footer {
+    padding: 30px 15px 15px;
+  }
+  
+  .contact-section {
+    text-align: left;
+  }
+  
+  .contact-section h3 {
+    text-align: left;
+  }
+  
+  .contact-info {
+    align-items: flex-start;
+  }
+  
+  .contact-address {
+    text-align: left;
+  }
+  
+  .map-container iframe {
+    width: 100%;
+    height: 150px;
+  }
+}
