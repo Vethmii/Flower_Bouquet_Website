@@ -1,7 +1,7 @@
 .header {
- display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* aligns items to the top */
   padding: 15px 40px;
   background-color: #DA99FF; /* Figma purple */
   font-family: 'Poppins', sans-serif;
@@ -26,17 +26,20 @@
   position: relative;
 }
 
-.nav-links a, .nav-links span {
+.nav-links a,
+.nav-links span {
   text-decoration: none;
-  color: #000000; /* white text on purple */
+  color: #000000;
   font-weight: 500;
   cursor: pointer;
 }
 
-.nav-links a:hover, .nav-links span:hover {
+.nav-links a:hover,
+.nav-links span:hover {
   color: #FFD6F0;
 }
 
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -66,24 +69,47 @@
   color: #7D4AEA;
 }
 
+/* Header right section */
 .header-right {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  color:#000000;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-end; /* align to right side */
+  gap: 8px;
+  color: #000000;
 }
 
 .search-bar {
   padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 220px;
+}
+
+.contact-cart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.hotline-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hotline-number {
   font-weight: 500;
 }
 
 .cart {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
+
+
+

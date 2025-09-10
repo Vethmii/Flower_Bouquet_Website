@@ -2,19 +2,20 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import DailyDeals from "./pages/DailyDeals";
-import CustomizeOrders from "./pages/CustomizeOrders";
-import Feedback from "./pages/Feedback";
-import AboutUs from "./pages/AboutUs";
-import FAQ from "./pages/FAQ";
-import Birthday from "./pages/Birthday";
-import Graduation from "./pages/Graduation";
-import Valentine from "./pages/Valentine";
-import AdminLogin from "./pages/admin/AdminLogin";
-import AdminPanel from "./pages/admin/AdminPanel";
+import Home from "./Pages/Home";
+import DailyDeals from "./Pages/DailyDeals";
+import CustomizeOrders from "./Pages/CustomizeOrders";
+import Feedback from "./Pages/Feedback";
+import AboutUs from "./Pages/AboutUs";
+import FAQ from "./Pages/FAQ";
+import Birthday from "./Pages/Birthday";
+import Graduation from "./Pages/Graduation";
+import Valentine from "./Pages/Valentine";
+import AdminLogin from "./Pages/admin/AdminLogin";
+import AdminPanel from "./Pages/admin/AdminPanel";
 import AdminCustomOrders from "./Pages/Admin/AdminCustomOrders";
-
+import AdminHappyCustomers from "./Pages/Admin/AdminHappyCustomers";
+import AdminDailyDeals from "./Pages/Admin/AdminDailyDeals";
 
 import "./App.css";
 
@@ -36,6 +37,8 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/admin/custom-orders" element={<AdminCustomOrders />} />
+          <Route path="/admin/happy-customers" element={<AdminHappyCustomers />} />
+          <Route path="/admin/daily-deals" element={<AdminDailyDeals />} />
         </Routes>
       </main>
       <Footer />
@@ -44,3 +47,4 @@ function App() {
 }
 
 export default App;
+

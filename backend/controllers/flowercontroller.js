@@ -10,7 +10,7 @@ const getFlowers = async (req, res) => {
   }
 };
 
-// Add a new flower
+// Add a new flower (basic, without image upload)
 const addFlower = async (req, res) => {
   const { name, price, imageURL, category, stock } = req.body;
 
@@ -25,3 +25,4 @@ const addFlower = async (req, res) => {
 };
 
 module.exports = { getFlowers, addFlower };
+

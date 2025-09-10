@@ -1,3 +1,4 @@
+// backend/routes/flowerRoutes.js
 const express = require('express');
 const router = express.Router();
 const Flower = require('../models/Flower');
@@ -14,27 +15,25 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// ---------------- Routes ----------------
+// ---------------- Flower Routes ----------------
 
 // GET /api/flowers - fetch all flowers
 router.get('/', async (req, res) => {
   try {
     const flowers = await Flower.find();
-    console.log('Flowers fetched:', flowers.length);
     res.json(flowers);
   } catch (err) {
-    console.error('Error in GET /api/flowers:', err);
+    console.error('Error fetching flowers:', err);
     res.status(500).json({ message: 'Server error fetching flowers' });
   }
 });
 
-// POST /api/flowers - add a new flower with image
+// POST /api/flowers - add a new flower
 router.post('/', upload.single('image'), async (req, res) => {
   try {
     const { name, price, category, stock } = req.body;
-
     if (!name || !price || !category || !req.file) {
-      return res.status(400).json({ message: 'Please provide all required fields and upload an image' });
+      return res.status(400).json({ message: 'All required fields must be provided' });
     }
 
     const flower = new Flower({
@@ -46,7 +45,6 @@ router.post('/', upload.single('image'), async (req, res) => {
     });
 
     const savedFlower = await flower.save();
-    console.log('Flower added:', savedFlower);
     res.status(201).json(savedFlower);
   } catch (err) {
     console.error('Error saving flower:', err);
@@ -54,7 +52,7 @@ router.post('/', upload.single('image'), async (req, res) => {
   }
 });
 
-// PUT /api/flowers/:id - update a flower
+// PUT /api/flowers/:id - update flower
 router.put('/:id', upload.single('image'), async (req, res) => {
   try {
     const flower = await Flower.findById(req.params.id);
@@ -68,7 +66,6 @@ router.put('/:id', upload.single('image'), async (req, res) => {
     if (req.file) flower.imageURL = `http://localhost:5000/uploads/${req.file.filename}`;
 
     const updatedFlower = await flower.save();
-    console.log('Flower updated:', updatedFlower);
     res.json(updatedFlower);
   } catch (err) {
     console.error('Error updating flower:', err);
@@ -76,12 +73,11 @@ router.put('/:id', upload.single('image'), async (req, res) => {
   }
 });
 
-// DELETE /api/flowers/:id - delete a flower
+// DELETE /api/flowers/:id - remove flower
 router.delete('/:id', async (req, res) => {
   try {
     const deleted = await Flower.findByIdAndDelete(req.params.id);
     if (!deleted) return res.status(404).json({ message: 'Flower not found' });
-    console.log('Flower deleted:', req.params.id);
     res.json({ message: 'Flower deleted' });
   } catch (err) {
     console.error('Error deleting flower:', err);
@@ -89,4 +85,48 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// ---------------- Daily Deals ----------------
+
+// POST /api/flowers/:id/deals - add daily deal
+router.post('/:id/deals', async (req, res) => {
+  try {
+    const { percent, corner } = req.body;
+    if (!percent) return res.status(400).json({ message: 'Percent is required' });
+
+    const flower = await Flower.findById(req.params.id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    const newDeal = { percent, corner: corner || 'right' };
+    flower.dailyDeals.push(newDeal);
+
+    const updatedFlower = await flower.save();
+    res.status(201).json(updatedFlower);
+  } catch (err) {
+    console.error('Error adding daily deal:', err);
+    res.status(500).json({ message: 'Server error adding daily deal' });
+  }
+});
+
+// DELETE /api/flowers/:id/deals/:dealId - remove daily deal
+router.delete('/:id/deals/:dealId', async (req, res) => {
+  try {
+    const flower = await Flower.findById(req.params.id);
+    if (!flower) return res.status(404).json({ message: 'Flower not found' });
+
+    flower.dailyDeals = flower.dailyDeals.filter(
+      (deal) => deal._id.toString() !== req.params.dealId
+    );
+
+    const updatedFlower = await flower.save();
+    res.json(updatedFlower);
+  } catch (err) {
+    console.error('Error removing daily deal:', err);
+    res.status(500).json({ message: 'Server error removing daily deal' });
+  }
+});
+
 module.exports = router;
+
+
+
+

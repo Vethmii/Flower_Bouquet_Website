@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./AdminPanel.css";
 
 const AdminPanel = () => {
   const [flowers, setFlowers] = useState([]);
@@ -86,40 +87,59 @@ const AdminPanel = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="admin-panel">
       <h2>{editingId ? "Edit Flower" : "Add New Flower"}</h2>
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", width: "300px", gap: "10px" }}
-      >
-        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
+      <form onSubmit={handleSubmit} className="admin-form">
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="number"
+          placeholder="Price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          required
+        />
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option>Birthday</option>
           <option>Valentine</option>
           <option>Graduation</option>
           <option>Home</option>
         </select>
-        <input type="number" placeholder="Stock" value={stock} onChange={(e) => setStock(e.target.value)} />
-        <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-        <button
-          type="submit"
-          style={{ padding: "10px", backgroundColor: "#800080", color: "#fff", border: "none", borderRadius: "6px", cursor: "pointer" }}
-        >
+        <input
+          type="number"
+          placeholder="Stock"
+          value={stock}
+          onChange={(e) => setStock(e.target.value)}
+        />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+        <button type="submit">
           {editingId ? "Update Flower" : "Add Flower"}
         </button>
       </form>
 
       <h2 style={{ marginTop: "30px" }}>All Flowers</h2>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", marginTop: "20px" }}>
+      <div className="flowers-list">
         {flowers.map((f) => (
-          <div key={f._id} style={{ border: "1px solid #ccc", padding: "10px", width: "200px", textAlign: "center" }}>
-            <img src={f.imageURL} alt={f.name} style={{ width: "100%", height: "150px", objectFit: "cover" }} />
+          <div key={f._id} className="flower-card">
+            <img src={f.imageURL} alt={f.name} className="flower-image" />
             <h3>{f.name}</h3>
             <p>Price: Rs. {f.price}</p>
             <p>Stock: {f.stock}</p>
-            <button onClick={() => handleEdit(f)} style={{ marginRight: "5px" }}>Edit</button>
-            <button onClick={() => handleDelete(f._id)}>Delete</button>
+            <button onClick={() => handleEdit(f)} className="edit-btn">
+              Edit
+            </button>
+            <button onClick={() => handleDelete(f._id)} className="delete-btn">
+              Delete
+            </button>
           </div>
         ))}
       </div>
@@ -128,3 +148,4 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
+

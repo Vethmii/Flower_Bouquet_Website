@@ -1,0 +1,99 @@
+.admin-orders-container {
+  padding: 30px;
+  background: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 28px;
+  color: #5a2d82;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.no-orders {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 40px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.orders-table thead {
+  background: linear-gradient(135deg, #d18be0, #8a4ecb);
+  color: white;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.orders-table tbody tr:nth-child(even) {
+  background: #f9f0fa;
+}
+
+.orders-table tbody tr:hover {
+  background: #f1e6fa;
+}
+
+.orders-table a {
+  color: #5a2d82;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.orders-table a:hover {
+  color: #8a4ecb;
+}
+
+.completed-row {
+  background: #e6ffe6 !important;
+  text-decoration: line-through;
+  color: #555;
+}
+
+.id-cell {
+  max-width: 160px;
+  word-break: break-all;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid #f2dede;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.12s ease, color 0.12s ease, background 0.12s ease;
+}
+
+.delete-btn:hover:not([disabled]) {
+  color: #c9302c;
+  transform: scale(1.06);
+  background: rgba(217, 83, 79, 0.05);
+}
+
+.delete-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
