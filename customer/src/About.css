@@ -1,0 +1,818 @@
+.about-us,
+.about-us * {
+  box-sizing: border-box;
+}
+.about-us {
+  background: #ffffff;
+  height: 2980px;
+  position: relative;
+  overflow-y: auto;
+}
+.about-us .image-35 {
+  border-radius: 30px;
+  opacity: 0.4;
+  width: 1159px;
+  height: 1445px;
+  position: absolute;
+  left: 133px;
+  top: 955px;
+  object-fit: cover;
+  aspect-ratio: 1159/1445;
+}
+.about-us .image-34 {
+  border-radius: 30px;
+  opacity: 0.3;
+  width: 1273px;
+  height: 560px;
+  position: absolute;
+  left: 80px;
+  top: 282px;
+  object-fit: cover;
+  aspect-ratio: 1273/560;
+}
+.about-us .frame-1 {
+  background: rgba(231, 206, 246, 0.8);
+  width: 1440px;
+  height: 487px;
+  position: absolute;
+  left: 0px;
+  top: 2493px;
+  overflow: hidden;
+}
+.about-us .info {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  left: 142px;
+  top: 51px;
+  width: 217px;
+  height: 116px;
+}
+.about-us .about-nonimi-flora {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 142px;
+  top: 139px;
+  width: 257px;
+}
+.about-us .vector {
+  width: 2.71%;
+  height: 8.21%;
+  position: absolute;
+  right: 65.76%;
+  left: 31.53%;
+  bottom: 63.04%;
+  top: 28.75%;
+  overflow: visible;
+}
+.about-us .vector2 {
+  width: 2.71%;
+  height: 8.21%;
+  position: absolute;
+  right: 53.12%;
+  left: 44.17%;
+  bottom: 28.34%;
+  top: 63.45%;
+  overflow: visible;
+}
+.about-us .faq {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 143px;
+  top: 196px;
+  width: 108px;
+}
+.about-us .follow-us {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  left: 436px;
+  top: 55px;
+  width: 216px;
+  height: 116px;
+}
+.about-us .contact-us {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  left: 636px;
+  top: 55px;
+  width: 217px;
+  height: 116px;
+}
+.about-us .nonimi-flora {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 636px;
+  top: 144px;
+  width: 162px;
+}
+.about-us .gangodawila-nugegoda-online-business-store {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 636px;
+  top: 176px;
+  width: 212px;
+}
+.about-us .rectangle-41 {
+  width: 265px;
+  height: 199px;
+  position: absolute;
+  left: 930px;
+  top: 139px;
+  object-fit: cover;
+}
+.about-us .location {
+  color: #000000;
+  text-align: left;
+  font-family: "RobotoSlab-Regular", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  left: 930px;
+  top: 55px;
+  width: 217px;
+  height: 116px;
+}
+.about-us ._94-72-291-2965 {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: 685px;
+  top: 317px;
+}
+.about-us .menu-items-instance {
+  border-radius: 41px !important;
+  padding: var(--var-sds-size-space-100, 4px) !important;
+  width: 1152px !important;
+  position: absolute !important;
+  left: 156px !important;
+  top: 151px !important;
+  transform-origin: 0 0 !important;
+  transform: rotate(0deg) scale(1, 1) !important;
+}
+.about-us .image-2 {
+  width: 463px;
+  height: 308px;
+  position: absolute;
+  left: 830px;
+  top: 313px;
+  aspect-ratio: 463/308;
+}
+.about-us .header-instance {
+  width: 1179px !important;
+  position: absolute !important;
+  left: 114px !important;
+  top: 22px !important;
+}
+.about-us .our-story {
+  color: #000000;
+  text-align: center;
+  font-family: "IbmPlexSansHebrew-Medium", sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  position: absolute;
+  left: 531px;
+  top: 1013px;
+  width: 356px;
+  height: 168px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .our-mission {
+  color: #000000;
+  text-align: center;
+  font-family: "IbmPlexSansHebrew-Medium", sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  position: absolute;
+  left: 531px;
+  top: 1545px;
+  width: 356px;
+  height: 168px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .line-1 {
+  width: 274.5px;
+  height: 0px;
+  position: absolute;
+  left: 585.5px;
+  top: 2019.5px;
+  overflow: visible;
+}
+.about-us
+  .at-nonimi-flora-we-believe-every-flower-arrangement-tells-a-story-our-mission-is-to-help-you-tell-yours-beautifully {
+  color: #000000;
+  text-align: center;
+  font-family: "IbmPlexSansHebrew-Medium", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  position: absolute;
+  left: 311px;
+  top: 2088px;
+  width: 824px;
+  height: 290px;
+}
+.at-nonimi-flora-we-believe-every-flower-arrangement-tells-a-story-our-mission-is-to-help-you-tell-yours-beautifully-span {
+}
+.at-nonimi-flora-we-believe-every-flower-arrangement-tells-a-story-our-mission-is-to-help-you-tell-yours-beautifully-span2 {
+  text-transform: lowercase;
+}
+.about-us .about-nonimi-flora2 {
+  color: #000000;
+  text-align: left;
+  font-family: "IbmPlexSansHebrew-Bold", sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  position: absolute;
+  left: 139px;
+  top: 313px;
+  width: 654px;
+}
+.about-us
+  .rooted-in-creativity-and-a-love-for-nature-nonimi-flora-is-dedicated-to-crafting-elegant-meaningful-flower-bouquets-for-every-occasion-each-arrangement-is-made-with-care-passion-and-a-personal-touch-that-sets-us-apart {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-ExtraLight", sans-serif;
+  font-size: 32px;
+  font-weight: 200;
+  position: absolute;
+  left: 132px;
+  top: 495px;
+  width: 664px;
+  height: 160px;
+}
+.about-us .image-31 {
+  width: 904px;
+  height: 601px;
+  position: absolute;
+  left: 638px;
+  top: 257px;
+  object-fit: cover;
+  aspect-ratio: 904/601;
+}
+.about-us .rectangle-80 {
+  background: #d9d9d9;
+  border-radius: 30px;
+  opacity: 0.75;
+  width: 855px;
+  height: 344px;
+  position: absolute;
+  left: 285px;
+  top: 1168px;
+}
+.about-us .rectangle-79 {
+  background: #d9d9d9;
+  border-radius: 30px;
+  opacity: 0.75;
+  width: 855px;
+  height: 258px;
+  position: absolute;
+  left: 285px;
+  top: 1700px;
+}
+.about-us
+  .started-as-a-small-heartfelt-venture-nonimi-flora-has-blossomed-into-a-passion-for-crafting-beautiful-meaningful-flower-bouquets-each-arrangement-is-made-with-dedication-and-creativity-reflecting-our-love-for-nature-and-the-joy-it-can-bring-to-everyday-moments-while-we-currently-serve-our-local-area-we-have-dreams-of-blooming-across-colombo-in-the-future {
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 500;
+  position: absolute;
+  left: 301px;
+  top: 1222px;
+  width: 824px;
+  height: 290px;
+}
+.started-as-a-small-heartfelt-venture-nonimi-flora-has-blossomed-into-a-passion-for-crafting-beautiful-meaningful-flower-bouquets-each-arrangement-is-made-with-dedication-and-creativity-reflecting-our-love-for-nature-and-the-joy-it-can-bring-to-everyday-moments-while-we-currently-serve-our-local-area-we-have-dreams-of-blooming-across-colombo-in-the-future-span {
+}
+.started-as-a-small-heartfelt-venture-nonimi-flora-has-blossomed-into-a-passion-for-crafting-beautiful-meaningful-flower-bouquets-each-arrangement-is-made-with-dedication-and-creativity-reflecting-our-love-for-nature-and-the-joy-it-can-bring-to-everyday-moments-while-we-currently-serve-our-local-area-we-have-dreams-of-blooming-across-colombo-in-the-future-span2 {
+  text-transform: lowercase;
+}
+.about-us
+  .to-bring-the-natural-beauty-and-joy-of-fresh-flowers-into-the-lives-of-people-across-colombo-creating-memorable-moments-through-thoughtfully-crafted-arrangements-that-speak-from-the-heart {
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  position: absolute;
+  left: 290px;
+  top: 1785px;
+  width: 824px;
+  height: 166px;
+}
+.to-bring-the-natural-beauty-and-joy-of-fresh-flowers-into-the-lives-of-people-across-colombo-creating-memorable-moments-through-thoughtfully-crafted-arrangements-that-speak-from-the-heart-span {
+  text-transform: lowercase;
+}
+.to-bring-the-natural-beauty-and-joy-of-fresh-flowers-into-the-lives-of-people-across-colombo-creating-memorable-moments-through-thoughtfully-crafted-arrangements-that-speak-from-the-heart-span2 {
+}
+.about-us .valentine {
+  background: #ffffff;
+  width: 1440px;
+  height: 2980px;
+  position: absolute;
+  left: 1812px;
+  top: 257px;
+  overflow-y: auto;
+}
+.about-us .image-20 {
+  border-radius: 30px;
+  opacity: 0.4;
+  width: 1221px;
+  height: 543px;
+  position: absolute;
+  left: 126px;
+  top: 287px;
+  object-fit: cover;
+  aspect-ratio: 1221/543;
+}
+.about-us .vector3 {
+  width: 2.71%;
+  height: 8.21%;
+  position: absolute;
+  right: 65.76%;
+  left: 31.53%;
+  bottom: 63.04%;
+  top: 28.75%;
+  overflow: visible;
+}
+.about-us .vector4 {
+  width: 2.71%;
+  height: 8.21%;
+  position: absolute;
+  right: 53.12%;
+  left: 44.17%;
+  bottom: 28.34%;
+  top: 63.45%;
+  overflow: visible;
+}
+.about-us .express-your-love-with-romantic-bouquets {
+  color: #000000;
+  text-align: left;
+  font-family: "IbmPlexSansHebrew-SemiBold", sans-serif;
+  font-size: 70px;
+  font-weight: 600;
+  position: absolute;
+  left: 177px;
+  top: 325px;
+  width: 629px;
+}
+.about-us
+  .from-classic-red-roses-to-unique-romantic-arrangements-find-the-perfect-bouquet-to-say-i-love-you-this-valentine-s {
+  color: #000000;
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  position: absolute;
+  left: 181px;
+  top: 598px;
+  width: 607.05px;
+  height: 146px;
+}
+.from-classic-red-roses-to-unique-romantic-arrangements-find-the-perfect-bouquet-to-say-i-love-you-this-valentine-s-span {
+  font-family: "Poppins-Light", sans-serif;
+  font-weight: 300;
+}
+.from-classic-red-roses-to-unique-romantic-arrangements-find-the-perfect-bouquet-to-say-i-love-you-this-valentine-s-span2 {
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-weight: 600;
+}
+.about-us .rectangle-11 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 153px;
+  top: 990px;
+  object-fit: cover;
+}
+.about-us .rectangle-12 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 449px;
+  top: 990px;
+  object-fit: cover;
+}
+.about-us .rectangle-13 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 743px;
+  top: 990px;
+  object-fit: cover;
+}
+.about-us .affairs-of-hearts-rs-3000 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 153px;
+  top: 1422px;
+  width: 281px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .love-bunch-for-her-rs-1400 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 438px;
+  top: 1422px;
+  width: 316px;
+  height: 76px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .product-1-rs-2000 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 750px;
+  top: 1422px;
+  width: 282.74px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .rectangle-14 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 1035px;
+  top: 990px;
+  object-fit: cover;
+}
+.about-us .bloom-bash-rs-1600 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 1028px;
+  top: 1422px;
+  width: 285px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .rectangle-15 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 143px;
+  top: 1743px;
+  object-fit: cover;
+}
+.about-us .rectangle-16 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 449px;
+  top: 1743px;
+  object-fit: cover;
+}
+.about-us .rectangle-17 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 732px;
+  top: 1743px;
+  object-fit: cover;
+}
+.about-us .rectangle-18 {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #da99ff;
+  border-width: 8px;
+  width: 270px;
+  height: 392px;
+  position: absolute;
+  left: 1026px;
+  top: 1743px;
+  object-fit: cover;
+}
+.about-us .b-ride-bloom-rs-1800 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 147px;
+  top: 2204px;
+  width: 281px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .petals-of-love-rs-850 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 436px;
+  top: 2202px;
+  width: 281px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .love-in-bloom-rs-2000 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 1039px;
+  top: 2194px;
+  width: 281px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .anniversary-aura-rs-3000 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 726px;
+  top: 2200px;
+  width: 281px;
+  height: 68px;
+  -webkit-text-stroke: 1px #000000;
+}
+.about-us .frame-2 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 175px;
+  top: 1569px;
+}
+.about-us .frame-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.about-us .rectangle-26 {
+  background: rgba(206, 145, 242, 0.8);
+  border-radius: 10px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 76px;
+  position: relative;
+}
+.about-us .frame-32 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 464px;
+  top: 1569px;
+}
+.about-us .frame-4 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 767px;
+  top: 1569px;
+}
+.about-us .frame-5 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 1057px;
+  top: 1569px;
+}
+.about-us .frame-6 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 173px;
+  top: 2349px;
+}
+.about-us .frame-7 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 454px;
+  top: 2349px;
+}
+.about-us .frame-8 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 767px;
+  top: 2349px;
+}
+.about-us .frame-9 {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 226px;
+  position: absolute;
+  left: 1047px;
+  top: 2349px;
+}
+.about-us .add-to-cart {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 211px;
+  top: 1598px;
+  width: 188px;
+}
+.about-us .add-to-cart2 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 502px;
+  top: 1602px;
+  width: 188px;
+}
+.about-us .add-to-cart3 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 803px;
+  top: 1596px;
+  width: 188px;
+}
+.about-us .add-to-cart4 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 1094px;
+  top: 1596px;
+  width: 153px;
+}
+.about-us .add-to-cart5 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 209px;
+  top: 2378px;
+  width: 188px;
+}
+.about-us .add-to-cart6 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 493px;
+  top: 2378px;
+  width: 154px;
+}
+.about-us .add-to-cart7 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 806px;
+  top: 2378px;
+  width: 150px;
+}
+.about-us .add-to-cart8 {
+  color: #000000;
+  text-align: left;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  position: absolute;
+  left: 1087px;
+  top: 2378px;
+  width: 152px;
+}
+.about-us .header-instance2 {
+  width: 1170px !important;
+  height: 91px !important;
+  position: absolute !important;
+  left: 126px !important;
+  top: 22px !important;
+}

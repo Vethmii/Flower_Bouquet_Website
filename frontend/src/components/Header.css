@@ -1,0 +1,89 @@
+.header {
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #DA99FF; /* Figma purple */
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #7D4AEA;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a, .nav-links span {
+  text-decoration: none;
+  color: #000000; /* white text on purple */
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-links a:hover, .nav-links span:hover {
+  color: #FFD6F0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFF8F0;
+  list-style: none;
+  padding: 10px 0;
+  display: none;
+  min-width: 140px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 8px 20px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+}
+
+.dropdown-menu li a:hover {
+  color: #7D4AEA;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color:#000000;
+}
+
+.search-bar {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact {
+  font-weight: 500;
+}
+
+.cart {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
