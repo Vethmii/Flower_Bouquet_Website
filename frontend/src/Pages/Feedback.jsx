@@ -26,19 +26,7 @@ export default function Feedback() {
   return (
     <div className="feedback-page">
       {/* Banner Section */}
-      <div className="feedback-banner">
-        <div className="banner-text">
-          <h1>Your Words Blossom Our Growth ...</h1>
-          <p>
-            Share your experience and help us bloom better. Read what our happy customers say and leave your feedback to inspire us to create even more beautiful floral moments.
-          </p>
-        </div>
-        <img
-          src="https://images.pexels.com/photos/5409706/pexels-photo-5409706.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="banner"
-          className="banner-image"
-        />
-      </div>
+  
 
       {/* Feedback Cards */}
       <div className="feedback-list">

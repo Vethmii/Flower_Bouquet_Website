@@ -6,17 +6,10 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* About Us */}
+
+        {/* About Us (formerly Info) */}
         <div className="footer-section">
           <h4>About Us</h4>
-          <p>
-            <Link to="/about-us" className="footer-link">Learn more</Link>
-          </p>
-        </div>
-
-        {/* Info */}
-        <div className="footer-section">
-          <h4>Info</h4>
           <ul>
             <li>
               <Link to="/about-us" className="footer-link">About Us</Link>
@@ -27,20 +20,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>
-              <Link to="/daily-deals" className="footer-link">Daily Deals</Link>
-            </li>
-            <li>
-              <Link to="/customize-orders" className="footer-link">Customize Orders</Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Follow Us */}
+        {/* Follow Us (moved to Info's place) */}
         <div className="footer-section">
           <h4>Follow Us</h4>
           <a
@@ -53,7 +33,7 @@ function Footer() {
           </a>
         </div>
 
-        {/* Contact */}
+        {/* Contact (moved to Quick Links' place) */}
         <div className="footer-section">
           <h4>Contact</h4>
           <a
@@ -69,7 +49,7 @@ function Footer() {
           </a>
         </div>
 
-        {/* Location */}
+        {/* Location (moved to Follow Us' place) */}
         <div className="footer-section">
           <h4>Location</h4>
           <iframe
@@ -92,6 +72,7 @@ function Footer() {
 }
 
 export default Footer;
+
 
 
 

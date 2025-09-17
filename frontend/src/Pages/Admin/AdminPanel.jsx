@@ -134,12 +134,14 @@ const AdminPanel = () => {
             <h3>{f.name}</h3>
             <p>Price: Rs. {f.price}</p>
             <p>Stock: {f.stock}</p>
-            <button onClick={() => handleEdit(f)} className="edit-btn">
-              Edit
-            </button>
-            <button onClick={() => handleDelete(f._id)} className="delete-btn">
-              Delete
-            </button>
+            <div className="button-group">
+              <button onClick={() => handleEdit(f)} className="edit-btn">
+                Edit
+              </button>
+              <button onClick={() => handleDelete(f._id)} className="delete-btn">
+                Delete
+              </button>
+            </div>
           </div>
         ))}
       </div>
@@ -148,4 +150,5 @@ const AdminPanel = () => {
 };
 
 export default AdminPanel;
+
 

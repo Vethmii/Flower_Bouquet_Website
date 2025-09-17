@@ -28,6 +28,32 @@ router.get('/', async (req, res) => {
   }
 });
 
+// ✅ UPDATED SEARCH ROUTE (name + category + price)
+router.get('/search', async (req, res) => {
+  const q = req.query.q;
+  try {
+    if (!q || q.trim() === "") {
+      return res.json([]); // empty query returns empty array
+    }
+
+    // Try to parse query as a number for price search
+    const priceQuery = isNaN(q) ? undefined : Number(q);
+
+    const flowers = await Flower.find({
+      $or: [
+        { name: { $regex: q, $options: "i" } },         // search by name
+        { category: { $regex: q, $options: "i" } },     // search by category
+        ...(priceQuery !== undefined ? [{ price: priceQuery }] : []) // search by price if number
+      ]
+    }).limit(10);
+
+    res.json(flowers);
+  } catch (err) {
+    console.error('Error searching flowers:', err);
+    res.status(500).json({ message: 'Server error searching flowers' });
+  }
+});
+
 // POST /api/flowers - add a new flower
 router.post('/', upload.single('image'), async (req, res) => {
   try {
@@ -126,6 +152,9 @@ router.delete('/:id/deals/:dealId', async (req, res) => {
 });
 
 module.exports = router;
+
+
+
 
 
 

@@ -1,3 +1,7 @@
+/* ================================
+   AdminPanel.css (Force Delete Button Visible + Side-by-Side Buttons)
+   ================================ */
+
 .admin-panel {
   padding: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -47,6 +51,10 @@
   transform: translateY(-2px);
 }
 
+/* ================================
+   Flower List / Cards
+   ================================ */
+
 .flowers-list {
   display: flex;
   flex-wrap: wrap;
@@ -62,6 +70,9 @@
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flower-image {
@@ -72,31 +83,60 @@
   margin-bottom: 10px;
 }
 
+/* ================================
+   Buttons
+   ================================ */
+
+/* Flexbox wrapper to keep buttons in one row */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* spacing between Edit & Delete */
+  margin-top: 8px;
+  width: 100%;
+}
+
 .edit-btn,
 .delete-btn {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  margin: 4px;
   font-size: 14px;
-  transition: background 0.2s ease;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.1s ease;
+  flex: 1; /* make both buttons equal width */
+  max-width: 90px;
 }
 
+/* Edit Button */
 .edit-btn {
-  background-color: #4caf50;
-  color: #fff;
+  background-color: #4caf50 !important;
+  color: #fff !important;
 }
 
 .edit-btn:hover {
-  background-color: #3e8e41;
+  background-color: #3e8e41 !important;
 }
 
+/* Delete Button (FORCE Always Visible) */
 .delete-btn {
-  background-color: #e53935;
-  color: #fff;
+  background-color: #e53935 !important;  /* strong red */
+  color: #ffffff !important;            /* white text */
+  border: 1px solid #c62828 !important; /* red border */
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .delete-btn:hover {
-  background-color: #c62828;
+  background-color: #c62828 !important;
 }
+
+.delete-btn:active {
+  background-color: #b71c1c !important;
+  transform: scale(0.95);
+}
+
+
+
+

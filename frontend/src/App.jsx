@@ -16,6 +16,7 @@ import AdminPanel from "./Pages/admin/AdminPanel";
 import AdminCustomOrders from "./Pages/Admin/AdminCustomOrders";
 import AdminHappyCustomers from "./Pages/Admin/AdminHappyCustomers";
 import AdminDailyDeals from "./Pages/Admin/AdminDailyDeals";
+import SearchResults from "./components/SearchResults";
 
 import "./App.css";
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/admin/custom-orders" element={<AdminCustomOrders />} />
           <Route path="/admin/happy-customers" element={<AdminHappyCustomers />} />
           <Route path="/admin/daily-deals" element={<AdminDailyDeals />} />
+          <Route path="/search/:term" element={<SearchResults />} />
         </Routes>
       </main>
       <Footer />

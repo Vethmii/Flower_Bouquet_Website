@@ -1,28 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const Home = () => {
+const SearchResults = () => {
+  const { term } = useParams();
   const [flowers, setFlowers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchFlowers = async () => {
+    const fetchSearchResults = async () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await axios.get("http://localhost:5000/api/flowers");
+        const res = await axios.get(`http://localhost:5000/api/flowers/search?q=${term}`);
         setFlowers(res.data);
       } catch (err) {
         console.error(err);
-        setError("Failed to load bouquets. Please try again later.");
+        setError("Failed to load search results. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchFlowers();
-  }, []);
+    fetchSearchResults();
+  }, [term]);
 
   const handleAddToCart = (flower) => {
     alert(`${flower.name} added to cart!`); // Placeholder for cart integration
@@ -30,39 +32,12 @@ const Home = () => {
 
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", backgroundColor: "#F5F5F5", padding: "40px" }}>
-      {/* Banner Section */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          backgroundColor: "#eacef0",
-          padding: "40px",
-          borderRadius: "16px",
-          margin: "20px auto",
-          width: "90%",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-        }}
-      >
-        <div style={{ maxWidth: "55%" }}>
-          <h1 style={{ fontSize: "2.5rem", color: "#333", marginBottom: "15px" }}>
-            Where flowers speak for you...
-          </h1>
-          <p style={{ fontSize: "2rem", color: "#555" }}>
-            Every bouquet is crafted with care, creativity, and a love for beautiful moments.
-            Whether it's a celebration, a surprise, or just because — our blooms are designed to make it unforgettable.
-          </p>
-        </div>
-        <img
-          src="https://assets.eflorist.com/site/EF-2287/assets/products/PHR_/sku10240643.jpg"
-          alt="banner"
-          style={{ width: "35%", borderRadius: "12px", objectFit: "cover" }}
-        />
-      </div>
+      <h2 style={{ textAlign: "center", marginBottom: "30px", color: "#333" }}>
+        Search results for "{term}"
+      </h2>
 
-      {/* Flower Grid */}
       {loading ? (
-        <p style={{ textAlign: "center", color: "#555" }}>Loading bouquets...</p>
+        <p style={{ textAlign: "center", color: "#555" }}>Loading search results...</p>
       ) : error ? (
         <div style={{ textAlign: "center", color: "red", marginBottom: "20px" }}>
           <p>{error}</p>
@@ -81,7 +56,7 @@ const Home = () => {
           </button>
         </div>
       ) : flowers.length === 0 ? (
-        <p style={{ textAlign: "center", color: "#555" }}>No bouquets available yet.</p>
+        <p style={{ textAlign: "center", color: "#555" }}>No bouquets found.</p>
       ) : (
         <div
           style={{
@@ -120,7 +95,9 @@ const Home = () => {
                 style={{ width: "100%", height: "280px", objectFit: "cover" }}
               />
               <h3 style={{ margin: "15px 0 5px", color: "#7D4AEA" }}>{f.name}</h3>
-              <p style={{ fontWeight: "bold", color: "#FF6B6B", marginBottom: "15px" }}>Rs. {f.price}</p>
+              <p style={{ fontWeight: "bold", color: "#FF6B6B", marginBottom: "15px" }}>
+                Rs. {f.price}
+              </p>
               <p
                 style={{
                   fontSize: "1rem",
@@ -166,8 +143,6 @@ const Home = () => {
   );
 };
 
-export default Home;
-
-
+export default SearchResults;
 
 

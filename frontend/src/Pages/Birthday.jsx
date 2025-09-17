@@ -55,7 +55,7 @@ const Birthday = () => {
         <img
           src="https://b2895521.smushcdn.com/2895521/wp-content/uploads/2023/01/Nurturing-Pink-Bouquet-1.jpg?lossy=0&strip=1&webp=1"
           alt="banner"
-          style={{ width: "35%", borderRadius: "12px", objectFit: "cover" }}
+          style={{ width: "90%",  height : "300px",borderRadius: "12px", objectFit: "cover" }}
         />
       </div>
 
