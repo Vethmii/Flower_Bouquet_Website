@@ -1,5 +1,5 @@
 .footer {
-  background-color: #DA99FF; /* Figma purple */
+  background-color: #EACEF0; /* Figma purple */
   color: #000000;
   font-family: 'Poppins', sans-serif;
   padding: 30px 40px 15px;
@@ -21,7 +21,7 @@
   font-size: 1.1rem;
   margin-bottom: 12px;
   font-weight: 600;
-  color: #7D4AEA;
+  color: #be2ed6;
 }
 
 .footer-section ul {

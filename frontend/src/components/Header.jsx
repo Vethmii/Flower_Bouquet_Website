@@ -41,6 +41,11 @@ const Header = () => {
         <div className="logo">
           <Link to="/">
             <span className="logo-text">Nonimi Flora</span>
+            <img
+              src="/images/logo.jpg"
+              alt="Nonimi Flora Logo"
+              className="logo-image"
+            />
           </Link>
         </div>
 
@@ -161,5 +166,7 @@ const Header = () => {
 };
 
 export default Header;
+
+
 
 

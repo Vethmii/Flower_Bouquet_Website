@@ -24,7 +24,7 @@
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 700;
-    color: #7D4AEA;
+    color: #be2ed6;
     letter-spacing: 0.5px;
 }
 
@@ -74,7 +74,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #EACEF0;
     border: 1px solid #ddd;
     list-style-type: none;
     padding: 0;
@@ -169,7 +169,7 @@
 }
 
 .nav-links a:hover, .nav-links span:hover {
-    color: #7D4AEA;
+    color: #be2ed6;
 }
 
 .nav-links a::after {
@@ -180,7 +180,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #7D4AEA;
+    background-color: #be2ed6;
     transition: width 0.3s ease-in-out;
 }
 
@@ -218,6 +218,14 @@
 }
 
 .dropdown-menu li a:hover {
-    color: #7D4AEA;
+    color: #be2ed6;
     background-color: #f7f7f7;
+}
+
+.logo-image {
+  display: block;
+  width: 100px;   
+  height: auto;
+  margin-top: 5px;  
+  margin-left: 0;   
 }

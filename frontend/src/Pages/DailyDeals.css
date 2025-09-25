@@ -103,8 +103,8 @@
 
 /* Add to cart button */
 .add-cart-btn {
-  background-color: #7d4aea;
-  color: #fff;
+  background-color: #d29ef2;
+  color: #333;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -115,7 +115,7 @@
 }
 
 .add-cart-btn:hover {
-  background-color: #5a32b0;
+  background-color: #E6C3F7;
 }
 
 /* Square for deals */

@@ -12,7 +12,7 @@ export default function AdminHappyCustomers() {
 
   const API_URL = "http://localhost:5000/api/feedback";
 
-  // Fetch feedbacks from backend
+  // Fetch feedbacks
   const fetchFeedbacks = async () => {
     try {
       const res = await axios.get(API_URL);
@@ -26,43 +26,42 @@ export default function AdminHappyCustomers() {
     fetchFeedbacks();
   }, []);
 
-  // Handle image selection
+  // Handle image
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setImageFile(e.target.files[0]);
     }
   };
 
-  // Handle adding feedback
+  // Handle add feedback (base64 JSON)
   const handleAddFeedback = async (e) => {
     e.preventDefault();
 
     if (!customerName || !rating || !comment || !date || !imageFile) {
-      alert("Please fill all fields and upload a screenshot!");
+      alert("⚠️ Please fill all fields and upload a screenshot!");
       return;
     }
 
-    try {
-      // Upload image to backend or use Cloudinary/URL
-      const formData = new FormData();
-      formData.append("screenshot", imageFile);
+    const reader = new FileReader();
+    reader.readAsDataURL(imageFile); // convert file → base64 string
 
-      // If backend does not support multipart yet, convert to base64
-      const reader = new FileReader();
-      reader.readAsDataURL(imageFile);
-      reader.onloadend = async () => {
-        const screenshotURL = reader.result; // base64 string
-
+    reader.onloadend = async () => {
+      try {
         const newFeedback = {
           customerName,
           rating,
           comment,
           date,
-          screenshotURL,
+          screenshotURL: reader.result, // send base64 as JSON
         };
 
-        const res = await axios.post(API_URL, newFeedback);
+        const res = await axios.post(API_URL, newFeedback, {
+          headers: { "Content-Type": "application/json" },
+        });
+
         setFeedbacks([res.data, ...feedbacks]);
+
+        alert("✅ Feedback added successfully!");
 
         // Reset form
         setCustomerName("");
@@ -71,11 +70,11 @@ export default function AdminHappyCustomers() {
         setDate("");
         setImageFile(null);
         e.target.reset();
-      };
-    } catch (err) {
-      console.error("Error adding feedback:", err);
-      alert("Failed to add feedback");
-    }
+      } catch (err) {
+        console.error("Error adding feedback:", err);
+        alert("❌ Failed to add feedback");
+      }
+    };
   };
 
   // Handle delete feedback
@@ -87,7 +86,7 @@ export default function AdminHappyCustomers() {
       setFeedbacks(feedbacks.filter((f) => f._id !== id));
     } catch (err) {
       console.error("Error deleting feedback:", err);
-      alert("Failed to delete feedback");
+      alert("❌ Failed to delete feedback");
     }
   };
 
@@ -160,3 +159,4 @@ export default function AdminHappyCustomers() {
     </div>
   );
 }
+
